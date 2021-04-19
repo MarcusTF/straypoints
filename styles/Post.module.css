@@ -1,0 +1,28 @@
+.mainContent {
+  max-width: 1100px;
+}
+.mainContent * {
+  padding: 1rem;
+}
+.mainContent div {
+  text-align: justify;
+  padding: 0.5rem;
+}
+.mainContent h1 {
+  padding: 0.5rem;
+}
+.mainContent img {
+  width: 100%;
+}
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.featImg {
+  width: 100%;
+  height: calc(100vh - 10rem);
+  background-size: cover;
+  background-position: bottom;
+}

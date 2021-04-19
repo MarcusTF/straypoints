@@ -1,0 +1,36 @@
+.nav {
+  padding: 0.1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.nav > a {
+  margin: 0.2rem;
+  font-family: 'rift';
+  /* font-weight: 600; */
+  border: solid 2px black;
+  padding: 0.2rem;
+  transition: 150ms ease-in-out;
+  background-color: #fff;
+}
+.nav > a:hover {
+  font-weight: 900;
+  transform: translateX(2px);
+}
+.nav > a:first-of-type:hover {
+  transform: translateX(-2px);
+}
+
+/* @media (max-width: 700px) and (orientation: portrait) {
+  .nav {
+    position: fixed;
+    justify-self: flex-end;
+    align-self: flex-end;
+    top: 0rem;
+    left: 0;
+    right: 0;
+    font-size: 0.9rem;
+  }
+} */
