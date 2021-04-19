@@ -22,7 +22,11 @@
 }
 .featImg {
   width: 100%;
+  height: -webkit-fill;
   height: calc(100vh - 10rem);
+  height: calc(-moz-available - 10rem);
+  height: calc(-webkit-fill-available - 10rem);
+  height: calc(stretch - 10rem);
   background-size: cover;
   background-position: bottom;
 }
