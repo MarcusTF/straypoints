@@ -24,7 +24,7 @@ const Home = ({ content }) => {
         <h2 className={styles.posts}>Posts</h2>
         {content
           ? content.map(data => (
-              <a href="#" className={styles.card}>
+              <a href="#" className={styles.card} key={data.id}>
                 <Link href="/[post]" as={`/${data.slug}`}>
                   <div className={styles.cardContentWrapper}>
                     <div className={styles.cardTitleWrapper}>

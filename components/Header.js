@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 
 const Header = () => {
   const router = useRouter()
+
   return (
     <header
       className={router.query.post == undefined ? 'header' : 'header-subpage'}

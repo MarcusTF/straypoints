@@ -71,16 +71,24 @@ const HeadRenderer = ({ pageContent, url, image }) => {
 
 const Post = ({ content }) => {
   const router = useRouter()
+
   const pageContent = content.filter(post => post.slug === router.query.post)[0]
+
+  // <3 Louis Hoebregts <3  https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+  if (process.browser) {
+    let vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+  }
+
+  const date = new Date(pageContent?.date)
   const image = pageContent?.image
     ? `${API_URL}${pageContent?.image.url}`
     : `${APP_URL}/header.jpg`
 
-  const date = new Date(pageContent?.date)
-  // const nextArticle
   const currentPostIndex = content.findIndex(
     post => post.id === pageContent?.id
   )
+
   const nextPost = content[currentPostIndex + 1] || content[0]
 
   return (
