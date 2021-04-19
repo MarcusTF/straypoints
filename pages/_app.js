@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <link rel="stylesheet" href="https://use.typekit.net/ywt6gyu.css" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
