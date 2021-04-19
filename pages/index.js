@@ -22,32 +22,34 @@ const Home = ({ content }) => {
           </p>
         </div>
         <h2 className={styles.posts}>Posts</h2>
-        {content.map(data => (
-          <a href="#" className={styles.card}>
-            <Link href="/[post]" as={`/${data.slug}`}>
-              <div className={styles.cardContentWrapper}>
-                <div className={styles.cardTitleWrapper}>
-                  <h3>{data.title}</h3>
-                  <h6>{data.author}</h6>
-                </div>
-                {data.image ? (
-                  <>
-                    <div
-                      className={styles.cardImage}
-                      style={{
-                        backgroundImage: `url(${API_URL}${data.image.formats.small.url})`,
-                      }}
-                    />
-                    <p style={{ maxHeight: '7rem' }}>{data.content}</p>
-                  </>
-                ) : (
-                  <p>{data.content}</p>
-                )}
-                <h6 className={styles.cardReadMore}>{`Read >>`}</h6>
-              </div>
-            </Link>
-          </a>
-        ))}
+        {content
+          ? content.map(data => (
+              <a href="#" className={styles.card}>
+                <Link href="/[post]" as={`/${data.slug}`}>
+                  <div className={styles.cardContentWrapper}>
+                    <div className={styles.cardTitleWrapper}>
+                      <h3>{data.title}</h3>
+                      <h6>{data.author}</h6>
+                    </div>
+                    {data.image ? (
+                      <>
+                        <div
+                          className={styles.cardImage}
+                          style={{
+                            backgroundImage: `url(${API_URL}${data.image.formats.small.url})`,
+                          }}
+                        />
+                        <p style={{ maxHeight: '7rem' }}>{data.content}</p>
+                      </>
+                    ) : (
+                      <p>{data.content}</p>
+                    )}
+                    <h6 className={styles.cardReadMore}>{`Read >>`}</h6>
+                  </div>
+                </Link>
+              </a>
+            ))
+          : null}
       </div>
     </main>
   )
@@ -65,9 +67,7 @@ export async function getStaticProps() {
     }
   } catch (err) {
     return {
-      props: {
-        content: [],
-      },
+      props: {},
     }
   }
 }
