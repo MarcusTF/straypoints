@@ -54,25 +54,22 @@ const Home = ({ content }) => {
 }
 
 export async function getStaticProps() {
-  const content_res = await fetch(`${API_URL}/posts/`)
-  const content = await content_res.json()
+  try {
+    const content_res = await fetch(`${API_URL}/posts/`)
+    const content = await content_res.json()
 
-  return {
-    props: {
-      content,
-    },
+    return {
+      props: {
+        content,
+      },
+    }
+  } catch (err) {
+    return {
+      props: {
+        content: [],
+      },
+    }
   }
 }
 
-{
-  /* <div className={styles.mainContent}>
-{data.image ? (
-  <img src={`${API_URL}${data.image.formats.large.url}`} />
-) : null}
-<h1>{data.title}</h1>
-<p>
-  <ReactMarkdown>{data.content}</ReactMarkdown>
-</p>
-</div> */
-}
 export default Home
