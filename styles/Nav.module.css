@@ -17,6 +17,11 @@
 }
 .nav > a:hover {
   font-weight: 900;
+}
+.nav > a:nth-of-type(2):hover {
+  transform: translateY(-2px);
+}
+.nav > a:last-of-type:hover {
   transform: translateX(2px);
 }
 .nav > a:first-of-type:hover {

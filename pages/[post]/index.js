@@ -90,6 +90,7 @@ const Post = ({ content }) => {
   )
 
   const nextPost = content[currentPostIndex + 1] || content[0]
+  const prevPost = content[currentPostIndex - 1] || content[content.length - 1]
 
   return (
     <>
@@ -111,10 +112,10 @@ const Post = ({ content }) => {
               {pageContent?.author} | {date.toDateString()}
             </h5>
           </div>
-          <div>
+          <div className={styles.content}>
             <ReactMarkdown>{pageContent?.content}</ReactMarkdown>
           </div>
-          <Nav nextPost={nextPost} />
+          <Nav nextPost={nextPost} prevPost={prevPost} />
         </div>
       </main>
     </>
