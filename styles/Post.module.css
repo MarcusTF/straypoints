@@ -1,8 +1,21 @@
 .mainContent {
   max-width: 1100px;
 }
-.mainContent * {
+.mainContent :is(p, h1, h2, h3, h4, h5, h6) {
   padding: 1rem;
+}
+.mainContent code {
+  line-height: 1.1rem;
+  color: #ecc28f;
+  width: 100%;
+}
+.mainContent pre {
+  border-radius: 3px;
+  width: 100%;
+  padding: 1rem;
+  background-color: #221a0f;
+  width: 100%;
+  margin: 0 1rem;
 }
 .mainContent div {
   text-align: justify;
